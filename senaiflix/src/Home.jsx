@@ -91,7 +91,7 @@ function Home() {
           <MovieList>
             {filtrar(movies).map(movie => (
               <Movie key={movie.id}>
-                <Link to={`/details/movie/${movie.id}`}>
+                <Link to={`./details/movie/${movie.id}`}>
                   <img src={`${img_path}${movie.poster_path}`} alt={movie.title} />
                 </Link>
                 <span>{movie.title}</span>
@@ -108,7 +108,7 @@ function Home() {
           <MovieList>
             {filtrar(series).map(serie => (
               <Movie key={serie.id}>
-                <Link to={`/details/tv/${serie.id}`}>
+                <Link to={`./details/tv/${serie.id}`}>
                   <img src={`${img_path}${serie.poster_path}`} alt={serie.name} />
                 </Link>
                 <span>{serie.name}</span>
