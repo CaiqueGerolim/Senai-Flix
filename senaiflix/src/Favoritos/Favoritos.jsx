@@ -17,7 +17,7 @@ function Favorites(){
         setFavs(savedFavs)
      },[])
 
-     function removeFavorite(){
+     function removeFavorite(id){
         const updateFavs = favs.filter(movie => movie.id !== id)
         setFavs(updateFavs)
         localStorage.setItem('favorites',JSON.stringify(updateFavs))
@@ -27,9 +27,13 @@ function Favorites(){
 return(<>
 <Header/>
 <Container>
-    {favs.length === 0 ? (
-        <p style={{textAlign:'center', marginTop:'3rem', color:'#aaa', fontSize:'70px'}}>você ainda nao salvou nenhum favorito!</p>
+    {favs.length === 0 ?(
+     <p style={{textAlign:'center', marginTop: '3rem',
+        color: '#aaa',fontSize:'50px', fontWeight:'600'}}>
+            Você ainda não salvou nenhum favorito!
+        </p>   
     ):(
+
     <MovieList>
         {favs.map(movie => 
             (<Movie key={movie.id}>
@@ -48,7 +52,8 @@ return(<>
     )}
 </Container>
 <Footer/>
-</>)
+</>
+)
     
 }
 
